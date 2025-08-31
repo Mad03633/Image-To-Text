@@ -3,7 +3,7 @@ from pytesseract import pytesseract, image_to_string
 import os
 
 path_to_tesseract = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-image_path = r"assets\example_1.jpg"
+image_path = r"assets\example_3.jpg"
 
 pytesseract.tesseract_cmd = path_to_tesseract
 
@@ -17,7 +17,6 @@ try:
 
     cleaned_text = text.strip()
 
-    print("Extracted text:")
     print(cleaned_text)
 
 except Exception as e:
