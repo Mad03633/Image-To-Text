@@ -38,8 +38,8 @@ function Dropzone({ onFileUpload }) {
           onChange={handleFileChange}
         />
         <div className="text-gray-600">
-          <p className="mb-2 font-medium">Перетащи картинку сюда</p>
-          <p className="text-sm text-gray-400">или кликни для выбора файла</p>
+          <p className="mb-2 font-medium">Drag and drop image here</p>
+          <p className="text-sm text-gray-400">or click to select file</p>
         </div>
       </label>
 

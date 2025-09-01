@@ -6,11 +6,11 @@ function ResultBox({ text, loading }) {
       </h2>
       <div className="flex-1 overflow-y-auto">
         {loading ? (
-          <p className="text-gray-400">Обработка изображения...</p>
+          <p className="text-gray-400">Image processing...</p>
         ) : text ? (
           <p className="whitespace-pre-wrap text-gray-800">{text}</p>
         ) : (
-          <p className="text-gray-400">Тут появится результат</p>
+          <p className="text-gray-400">The result will appear here</p>
         )}
       </div>
     </div>
