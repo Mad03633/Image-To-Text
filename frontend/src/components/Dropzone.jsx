@@ -1,43 +1,59 @@
 import { useState } from "react";
 
-export default function Dropzone({ onFileUpload }) {
-  const [file, setFile] = useState(null);
+function Dropzone({ onFileUpload }) {
+  const [preview, setPreview] = useState(null);
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setPreview(URL.createObjectURL(file));
+      onFileUpload(file);
+    }
+  };
 
   const handleDrop = (e) => {
     e.preventDefault();
-    const droppedFile = e.dataTransfer.files[0];
-    setFile(droppedFile);
-    onFileUpload(droppedFile);
+    const file = e.dataTransfer.files[0];
+    if (file) {
+      setPreview(URL.createObjectURL(file));
+      onFileUpload(file);
+    }
   };
 
   const handleDragOver = (e) => {
     e.preventDefault();
   };
 
-  const handleFileChange = (e) => {
-    const selectedFile = e.target.files[0];
-    setFile(selectedFile);
-    onFileUpload(selectedFile);
-  };
-
   return (
     <div
-      className="flex flex-col items-center justify-center border-4 border-dashed border-gray-400 rounded-2xl bg-white p-10 shadow-xl hover:border-blue-500 transition cursor-pointer"
       onDrop={handleDrop}
       onDragOver={handleDragOver}
+      className="flex flex-col items-center justify-center border-2 border-dashed border-gray-400 rounded-2xl p-6 bg-white shadow-md"
     >
-      <p className="text-lg font-semibold text-gray-700">
-        Drag & Drop your image here
-      </p>
-      <input
-        type="file"
-        accept="image/*"
-        onChange={handleFileChange}
-        className="mt-4"
-      />
-      {file && (
-        <p className="mt-2 text-sm text-gray-500">{file.name}</p>
+      <label className="cursor-pointer text-center">
+        <input
+          type="file"
+          accept="image/*"
+          className="hidden"
+          onChange={handleFileChange}
+        />
+        <div className="text-gray-600">
+          <p className="mb-2 font-medium">Перетащи картинку сюда</p>
+          <p className="text-sm text-gray-400">или кликни для выбора файла</p>
+        </div>
+      </label>
+
+      {preview && (
+        <div className="mt-4">
+          <img
+            src={preview}
+            alt="preview"
+            className="max-h-48 rounded-lg border shadow"
+          />
+        </div>
       )}
     </div>
   );
 }
+
+export default Dropzone;
