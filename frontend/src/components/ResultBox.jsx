@@ -1,20 +1,17 @@
-function ResultBox({ text, loading }) {
+export default function ResultBox({ result }) {
   return (
-    <div className="p-6 bg-white border rounded-2xl shadow-md flex flex-col">
-      <h2 className="text-lg font-semibold mb-3 text-gray-700">
-        Извлечённый текст
-      </h2>
-      <div className="flex-1 overflow-y-auto">
-        {loading ? (
-          <p className="text-gray-400">Image processing...</p>
-        ) : text ? (
-          <p className="whitespace-pre-wrap text-gray-800">{text}</p>
-        ) : (
-          <p className="text-gray-400">The result will appear here</p>
-        )}
+    <div className="p-4 bg-white rounded-2xl shadow-md flex flex-col">
+      <h2 className="text-lg font-semibold mb-3">📜 Recognized text</h2>
+
+      {result.language && (
+        <p className="text-sm text-gray-500 mb-2">
+          Language detected: <span className="font-medium">{result.language}</span>
+        </p>
+      )}
+
+      <div className="flex-1 bg-gray-50 border rounded-lg p-3 text-gray-700 overflow-auto">
+        {result.text ? result.text : "The text will appear here after the image is uploaded"}
       </div>
     </div>
   );
 }
-
-export default ResultBox;
