@@ -3,8 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
 import io
 
-from .ocr_service import OCRService
-from .models import OCRResponse
+from ocr_service import OCRService
+from models import OCRResponse
 
 app = FastAPI()
 ocr_service = OCRService()

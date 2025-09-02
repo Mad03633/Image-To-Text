@@ -1,7 +1,7 @@
 from PIL import Image
 import pytesseract
 from langdetect import detect
-from .config import LANG_MAP
+from config import LANG_MAP
 
 class OCRService:
     def __init__(self, default_langs = "eng+kaz+rus"):
