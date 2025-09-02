@@ -1,7 +1,7 @@
 export default function ResultBox({ result }) {
   return (
     <div className="p-4 bg-white rounded-2xl shadow-md flex flex-col">
-      <h2 className="text-lg font-semibold mb-3">📜 Recognized text</h2>
+      <h2 className="text-lg font-semibold mb-3">Recognized text</h2>
 
       {result.language && (
         <p className="text-sm text-gray-500 mb-2">
