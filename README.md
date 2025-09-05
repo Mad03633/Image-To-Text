@@ -13,3 +13,8 @@ It supports **Kazakh, Russian, English** and (if you want, you can use many othe
 
 ## Install Tesseract OCR
 
+- Windows: Download the ![Tesseract installer](https://github.com/UB-Mannheim/tesseract/wiki) and add it to **PATH**.
+- If you want to add more languages for tesseract, you can explore this ![website](https://icij.gitbook.io/datashare/local-mode/add-more-languages)
+
+## Results
+
