@@ -20,8 +20,8 @@ It supports **Kazakh, Russian, English** and (if you want, you can use many othe
 
 - Kazakh language (not perfect for example_1.jpg in assets directory):
 
-
+![]()
 
 - English language (perfect):
 
-
+![]()
