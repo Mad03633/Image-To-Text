@@ -18,10 +18,10 @@ It supports **Kazakh, Russian, English** and (if you want, you can use many othe
 
 ## Results
 
-- Kazakh language (not perfect for example_1.jpg in assets directory):
+- Kazakh language **(not perfect for example_1.jpg in assets directory)**:
 
-![]()
+![](https://github.com/Mad03633/Image-To-Text/blob/dev/assets/Result_3.jpg)
 
 - English language (perfect):
 
-![]()
+![](https://github.com/Mad03633/Image-To-Text/blob/dev/assets/Result_2.jpg)
